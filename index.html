@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yes or No Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin-bottom: 40px;
+      font-size: 26px;
+      color: #333;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    #yes {
+      background-color: #2ecc71;
+      color: white;
+    }
+
+    #no {
+      background-color: #e74c3c;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Will you be my friend ?</h2>
+  <div class="buttons">
+    <button id="yes" onclick="alert('You said YES! Proceeding...')">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+
+    noBtn.addEventListener('mouseenter', () => {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+      noBtn.style.left = `${randomX}px`;
+      noBtn.style.top = `${randomY}px`;
+    });
+  </script>
+
+</body>
+</html>
